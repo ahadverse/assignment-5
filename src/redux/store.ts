@@ -1,4 +1,4 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import filterSlice from "./features/filterSlice";
 import { apiSlice } from "./api/apiSlice";
 import commonOptions from "./features/commonOptionsSlice";

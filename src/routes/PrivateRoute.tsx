@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { useAppSelector } from "../redux/hook";
 import { Navigate, useLocation } from "react-router-dom";
 import Loader from "../components/ui/loader";

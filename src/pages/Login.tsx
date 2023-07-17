@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import {
@@ -15,7 +16,7 @@ import { useEffect } from "react";
 import { ICredential } from "../Interfaces/globalTypes";
 
 const Login = () => {
-  const dispatch = useDispatch();
+  const dispatch: any = useDispatch();
 
   const { user } = useAppSelector((state) => state.users);
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ const Login = () => {
   }, [user.email]);
 
   const onFinish = (values: ICredential) => {
-    const { email, password, ...info } = values;
+    const { email, password } = values;
     dispatch(loginUser({ email, password }));
   };
 

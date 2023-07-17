@@ -25,6 +25,7 @@ const EditBook = () => {
   const dispatch = useAppDispatch();
   const { loading } = useAppSelector((state) => state.commonOptions);
   const onChange: DatePickerProps["onChange"] = (date, dateString) => {
+    console.log(date);
     setData(dateString);
   };
   const [patchBook] = usePatchBookMutation();
@@ -49,7 +50,9 @@ const EditBook = () => {
         id: id,
       };
 
-      const response = await patchBook(options);
+      const response: any = await patchBook(options);
+
+      console.log(response);
 
       dispatch(isLoading(false));
 

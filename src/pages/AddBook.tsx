@@ -25,6 +25,7 @@ const AddBook = () => {
   };
 
   const onChange: DatePickerProps["onChange"] = (date, dateString) => {
+    console.log(date);
     setData(dateString);
   };
 
@@ -33,7 +34,7 @@ const AddBook = () => {
     value.publicationDate = date;
 
     try {
-      const response = await addBooks(value);
+      const response: any = await addBooks(value);
       dispatch(isLoading(false));
 
       if (response.data.acknowledged == true) {

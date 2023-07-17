@@ -45,7 +45,7 @@ const Book = () => {
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then(async () => {
-      const response = await deleteBook(id);
+      const response: any = await deleteBook(id);
       if (response.data.deletedCount) {
         Swal.fire("Deleted!", "Your file has been deleted.", "success");
       }

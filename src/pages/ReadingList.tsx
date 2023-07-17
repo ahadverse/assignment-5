@@ -44,7 +44,7 @@ export default function ReadingList() {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Yes, Update it!",
     }).then(() => {
       dispatch(updateBookReadStatus(book));
       Swal.fire("Updated!", "Book's Status is Updated.", "success");

@@ -12,6 +12,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../redux/hook";
 import { addUserInfo, createUser } from "../redux/users/userSlice";
 import { useEffect } from "react";
+import { ICredential } from "../Interfaces/globalTypes";
 
 const SignUp = () => {
   const dispatch = useAppDispatch();
@@ -25,7 +26,7 @@ const SignUp = () => {
     }
   }, [user.email, isLoading]);
 
-  const onFinish = (values: any) => {
+  const onFinish = (values: ICredential) => {
     const { email, password, ...info } = values;
     dispatch(createUser({ email, password }));
     dispatch(addUserInfo(info));
